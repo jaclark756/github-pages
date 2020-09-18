@@ -1,3 +1,8 @@
+/*reset selector*/
+* {
+	margin: 0;
+	padding: 0;
+}
 /*the styles for the html*/
 html {
 	background-color: white;
@@ -17,23 +22,27 @@ body {
 }
 header {
 	border-bottom: 3px solid #931420;
+	padding-top: 1.5em;
+	padding-bottom: 1.5em;
 }
 header img {
 	float: left;
+	padding-left: 30px;
+	padding-right: 30px;
 }
 header h2 {
 	font-size: 170%;
 	color: #800000;
-	text-indent: 30px;
 }
 header h3 {
 	font-size: 130%;
 	font-style: italic;
-	text-indent: 30px;
 }
 /* the styles for the section */
 main {
 	clear: left;
+	padding-left: 30px;
+	padding-right: 30px;
 }
 main h1 {
 	font-size: 150%;

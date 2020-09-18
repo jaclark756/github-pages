@@ -15,6 +15,9 @@ body {
 .shadow {
 	text-shadow: 2px 2px #800000;
 }
+header {
+	border-bottom: 3px solid #931420;
+}
 header img {
 	float: left;
 }
@@ -34,6 +37,8 @@ main {
 }
 main h1 {
 	font-size: 150%;
+	border-top: 3px solid #931420;
+	border-bottom: 3px solid #931420;
 }
 main h2 {
 	font-size: 130%;
@@ -47,6 +52,10 @@ a:hover, a:focus {
 }
 
 /* the styles for the footer */
+footer {
+	background-color: #800000;
+	color: white; 
+}
 footer p {
 	text-align: center;
 }

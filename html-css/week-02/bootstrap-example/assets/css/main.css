@@ -1,0 +1,19 @@
+.carousel-item {
+    max-height:500px;
+    }
+.quote {
+font-family: 'Open Sans', sans-serif; 
+text-align: center;
+margin: 2px 2 px;
+}
+.card-section {
+    padding-top: 1em;
+    padding-right: 1em;
+    padding-bottom: .5em;
+    padding-left: 1em;
+}
+ #transportation {
+     background-color: #227093;
+ }   
+  
+    

@@ -1,0 +1,36 @@
+/*carousel styling*/
+.carousel-item {
+    max-height:500px;
+    }
+/*quote row styling*/
+  .quote {
+      text-align: center;
+      margin: 2px 2px;
+  }  
+/*list styling*/
+  .list-group {
+      background: #84817a;
+      padding: 8px;
+      width: 400px;
+  }
+/*active list item styling*/
+ .list-group-item.active {
+      background: #706fd3;
+      border: 1px solid #33d9b2;
+  }
+/*card section stying*/
+  .card-section {
+      padding: 10px;
+      width: 100%;
+      margin: 3px 3px;
+  }
+/*individual card styling*/
+  #transportation {
+    background: #f7f1e3;
+    margin: auto;
+  }
+/*card img size*/
+  .card-img-top {
+      max-height: 300px;
+  }
+  

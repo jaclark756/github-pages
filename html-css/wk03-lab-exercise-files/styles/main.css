@@ -3,6 +3,34 @@ body {
 	font-family: Arial, Helvetica, sans-serif;
     font-size: 100%;
 }
+/*removes bullets, margins and pdding*/
+#nav_menu ul {
+	list-style: none;
+	position: relative;
+}
+
+/*displays lis horizontally*/
+#nav_menu ul li {
+	float: left;
+}
+
+/*adding styling for links in nav menu*/
+#nav_menu ul li a {
+	display: block;
+	width: 20%;
+	text-align: center;
+	padding-top: 1em;
+	padding-bottom: 1em;
+	text-decoration: none;
+	background-color: #800000;
+	color: white;
+	font-weight: bold;
+}
+
+/*changed text color for current class*/
+#nav_menu ul li a.current {
+	color: yellow;
+}
 
 /* the styles for the header */
 header img {

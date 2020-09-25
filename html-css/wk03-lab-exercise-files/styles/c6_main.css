@@ -6,6 +6,53 @@
 html {
 	background-color: white;
 }
+
+#nav_menu {
+	position: relative;
+}
+/*removes bullets, margins and pdding*/
+#nav_menu ul {
+	list-style: none;
+	position: relative;
+}
+
+/*displays lis horizontally*/
+#nav_menu ul li {
+	float: left;
+}
+
+/*adding styling for links in nav menu*/
+#nav_menu ul li a {
+	display: block;
+	width: 160px;
+	text-align: center;
+	padding-top: 1em;
+	padding-bottom: 1em;
+	text-decoration: none;
+	background-color: #800000;
+	color: white;
+	font-weight: bold;
+}
+
+/*changed text color for current class*/
+#nav_menu ul li a.current {
+	color: yellow;
+}
+
+#nav_menu ul li ul {
+	display: none;
+	position: absolute;
+	top: 100%;
+}
+
+#nav_menu ul li:hover > ul {
+	display: block;
+}
+
+#nav_menu ul li ul li {
+	float: none;
+}
+
 body {
 	font-family: Arial, Helvetica, sans-serif;
     font-size: 100%;

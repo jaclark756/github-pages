@@ -48,7 +48,11 @@ html {
 #nav_menu ul li:hover > ul {
 	display: block;
 }
-
+#nav_menu > ul::after {
+	content: "";
+	clear: both;
+	display: block; 
+}
 #nav_menu ul li ul li {
 	float: none;
 }
@@ -164,7 +168,9 @@ aside h3 {
 aside img {
 	padding-bottom: 1em;
 }
-
+section ul {
+	list-style-type: circle;
+}
 /* the styles for the footer */
 footer {
 	background-color: #931420;

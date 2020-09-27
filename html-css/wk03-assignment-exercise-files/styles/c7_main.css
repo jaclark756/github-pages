@@ -1,3 +1,66 @@
+/*tablet portrait to standard 960 pg 313 */
+@media only screen and (max-width: 959px) {
+	#nav_menu ul li a { font-size: .875em; }	/* 14/16 */
+	article h1 { font-size: 1.5em; }	/* 135% 24/16 */
+	aside h2 { font-size: 1.125em; }	/* 120% 18/16 */
+}
+/*mobile landscape to tablet portrait <= 767px pg 313 */
+@media only screen and (max-width: 767px) {
+	#nav_menu { display: none; }
+	#mobile_menu { display: block; }
+	.slicknav_menu { background-color: #facd8a !important; }
+	body {
+		width: 100%;	/* full width of screen */
+		margin: 0;		/* no margins */
+		border: none;  /* no border */
+	}
+	header, footer p { text-align: center; }
+	footer p { margin-right: 0;}
+	header h2 {
+		font-size: 1.625em;	/* 26/16 */
+		margin: .4em 0 .25em 0;
+	}
+	header h3 {
+		font-size: 1em;	/* base font size */
+		margin-left: 0;
+	}
+	header img { float: none; }
+	article {
+		width: 95.9596%;	/* 100 - (2*2.0202) for padding */
+		float: none;
+		margin-right: 2.0202%;	/* 20/990*100 */
+		padding-right: 0;
+	}
+	article img {
+		float: left;
+		width: 50%;
+		margin-right: 2%;
+	}
+	aside {
+		width: 91.9192%; 	/* 100- (4*2.0202) for padding and margins */
+		float: none;
+		margin: 0 2.0202% 2.0202% 2.0202%;	/* 20/990*100 */
+	}
+}
+/* mobile portrait to mobile landscape <= 479px pg 315 */
+@media only sreen and (max-width: 479px) {
+	header h2 { font-size: 1.375em; }	/* 22/16 */
+	header h3 { font-size: .8125em; }	/* 13/16 */
+	p { font-size: .875em; }	/* 14/16 */
+	article h1, aside h2 {
+		font-size: 1em; }	/* base font size */
+		aside li { font-size: .875em; }	/*14/16 */
+	}
+	article img {
+		float: none;
+		width: 100%;
+		margin-right: 0;
+	}
+	aside h3 { font-size: .9375em; }	/* 15/16 */
+	footer p { font-size: .6875em; }	/* 11/16 */
+}
+
+
 /* the styles for the elements */
 * {
 	margin: 0;
@@ -9,7 +72,7 @@ html {
 body {
 	font-family: Arial, Helvetica, sans-serif;
     font-size: 100%;
-    width: 800px;
+    width: 98%; max-width: 1200px; /*was 960 max*/
     margin: 0 auto;
     border: 3px solid #931420;
     background-color: #fffded;
@@ -39,7 +102,11 @@ header h3 {
 	font-style: italic;
 }
 header img {
+	width: 8.0808%; /* 80/990*100 */
+	max-width: 80px; /* native size */
+	min-width: 40px; /* minimum size */ 
 	float: left;
+	margin-left: 2.0202%; /* 20/990*100 */
 	padding: 0 30px;
 }
 .shadow {
@@ -51,13 +118,15 @@ header img {
 	margin: 0;
 	padding: 0;
 	position: relative;
+	width: 100%; /*full width of body*/
 }
 #nav_menu ul li {
 	float: left;
+	width: 20%; /* 198/990*100 */
 }
 #nav_menu ul li a {
     display: block;
-    width: 160px;
+    width: 100%; /*160px;*/
     text-align: center;
     padding: 1em 0;
     text-decoration: none;
@@ -77,6 +146,7 @@ header img {
 	float: none;
 }
 #nav_menu ul li:hover > ul {
+	width: 100%; /* full width of list item */
 	display: block;
 }
 #nav_menu > ul::after {
@@ -93,7 +163,7 @@ main {
 section {
 	width: 525px;
 	float: right;
-	padding: 0 20px 20px 20px;
+	padding: 0 53.0303% 20px 53.0303%;   /* from 0 20px 20px 20px; to L/R 53.0303%; 525/990*100 */
 }
 section h1 {
 	font-size: 150%;
@@ -134,7 +204,7 @@ article h3 {
 	padding-bottom: .25em;
 }
 article img {
-	float: right;
+	float: left;
 	margin: .5em 0 1em 1em;
 	border: 1px solid black;
 }
@@ -142,8 +212,8 @@ article img {
 /* the styles for the aside */
 aside {
 	width: 215px;
-	float: right;
-	padding: 0 0 20px 20px;
+	float: left;
+	padding: 0 0 20px 2.0202%; /*change left padding from 20 px to 2.0202%; 20/990*100  */
 }
 aside h2 {
 	color: #800000;

@@ -9,7 +9,8 @@ html {
 body {
 	font-family: Arial, Helvetica, sans-serif;
     font-size: 100%;
-    width: 1035px;
+	width: 98%; /* step 4 */
+	max-width: 960px; /* step 4*/
     margin: 0 auto;
     border: 3px solid #931420;
     background-color: #fffded;
@@ -30,9 +31,9 @@ li:hover .sub-nav {
 	float: left
 }
 
-.nav_menu ul li a{
+.nav_menu ul li a {	/* step 8 move style to ul li a */
 	display: block;
-	width: 207px;
+	width: 36.316%;	/* 207px/570px (main) step 6 pg 289 */
 	padding: 1em 0px;
 	text-align: center;
 	background-color: #800000;
@@ -44,7 +45,6 @@ li:hover .sub-nav {
 .nav_menu ul li a.current{
 	color: yellow
 }
-
 .nav_menu > ul::after {
 	content: '';
 	display: block;
@@ -60,7 +60,10 @@ li:hover .sub-nav {
 .nav-menu .sub-nav li{
 	float: clear !important;
 }
-
+#nav_menu ul ul li { 
+	float: none;
+	width: 100%;	/* step 5 nav.sub-menu */
+}
 .circle-list {
 	list-style-type: circle;
 }
@@ -91,7 +94,7 @@ header h3 {
 }
 header img {
 	float: left;
-	padding: 0 30px;
+	padding: 0 3.125%; /* 30px/960px step 6 */
 }
 .shadow {
 	text-shadow: 2px 2px 2px #800000;
@@ -99,10 +102,11 @@ header img {
 /* the styles for the main content */
 main {
 	clear: left;
+	width: 59.375%;	/* step 6 pg 289 */
 }
 /* the styles for the section */
 section {
-	width: 525px;
+	width: 92.105%;	/* step 6 pg 289 */
 	float: left;
 	padding-bottom: 20px;
 }
@@ -147,13 +151,15 @@ article img {
 	float: right;
 	margin: .5em 0 1em 1em;
 	border: 1px solid black;
+	max-width: 40%; /* step 13 */
+	min-width: 150px; /* step 13 */
 }
 
 /* the styles for the aside */
 aside {
-	width: 215px;
+	width: 37.719%;	/* 215px/570px (main) step 6 pg 289 */
 	float: left;
-	padding: 0 20px 0 20px;
+	padding: 0 3.571% 0 3.571%; /* 20px/960px step 6 */
 }
 aside h2 {
 	color: #800000;
@@ -180,3 +186,114 @@ footer p {
 	color: white;
 	padding: 1em 0;
 }
+
+/*standard to tablet portrait 960 pg 313 */
+@media only screen and (max-width: 959px) {
+	#nav_menu ul li a { font-size: .875em; }	/* 14/16 */
+	article h1 { font-size: 135%; }	/* 24/16 */
+	aside h2 { font-size: 120%; }
+	aside { font-size: 120% }	/*  18/16 */
+}
+
+/*standard to phone landscape <= 767px pg 313 */
+@media only screen and (max-width: 767px) {
+	#nav_menu { 
+		display: none; 
+	}
+	#mobile_menu { 
+		display: block; 
+	} /*display mobile menu*/
+	.slicknav_menu { 
+		background-color: #800000; 
+	}
+	body {
+		width: 96%;	/* full width of screen */
+		margin: 0;		/* no margins */
+		border: none;  /* no border */
+	}
+	header {
+		justify-content: center;
+	}
+	header, footer p { 
+		text-align: center; 
+	}
+	footer p { 
+		margin-right: 0;
+	}
+	header h2 {
+		font-size: 1.625em;	/* 26/16 */
+		margin: .4em 0 .25em 0;
+	}
+	header h3 {
+		font-size: 90%;	/* base font size */
+		margin-left: 0;
+	}
+	header img { 
+		float: none; 
+	}
+	article {
+		width: 95.9596%;	/* 100 - (2*2.0202) for padding */
+		float: none;
+		margin-right: 2.0202%;	/* 20/990*100 */
+		padding-right: 0;
+	}
+	article img {
+		float: left;
+		width: 30%;
+		margin-right: 2%;
+	}
+	section {
+		float: none;
+		width: 95.9596%;
+	}
+	aside {
+		width: 95.9596%; 	/* 100- (2*2.0202)  100% - l&r padding */
+		float: none;
+		margin: 0 2.0202% 2.0202% 2.0202%;	/* 20/990*100 */
+		padding-right: 2.0202%;
+		padding-left: 2.0202%;
+	}
+	aside #speakers {
+		column-count: 2;
+	}
+	
+	/* mobile in portrait <= 479px pg 315 */
+@media only sreen and (max-width: 479px) {
+	#nav_menu { 
+		display: none 
+	} /* ?? pg 305 */
+	header h2 { 
+		font-size: 1.375em; 
+	}	/* 22/16 */
+	header h3 { 
+		font-size: .8125em; 
+	}	/* 13/16 */
+	p { 
+		font-size: .875em; 
+	}	/* 14/16 */
+	article h1, aside h2 {
+		font-size: 90%; 
+	}	/* base font size */
+		aside li { 
+			font-size: .875em; 
+		}	/*14/16 */
+	
+	article img {
+		float: none;
+		width: 100%;
+		margin-right: 0;
+	}
+	aside h3 { 
+		font-size: .9375em; 
+	}	/* 15/16 */
+	footer p { 
+		font-size: .6875em; 
+	}	/* 11/16 */
+}
+/* hide mobile menu */
+#mobile_menu {
+	display: none;
+}
+
+
+

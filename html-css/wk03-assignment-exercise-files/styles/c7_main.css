@@ -1,172 +1,307 @@
-/* the styles for the elements */
+	/*pasted from changes to c06_main.css*/
+	/* the styles for the elements */
 * {
 	margin: 0;
 	padding: 0;
-	}
-	html {
+}
+html {
 	background-color: white;
-	}
-	body {
+}
+body {
 	font-family: Arial, Helvetica, sans-serif;
-	font-size: 100%;
-	width: 800px;
-	margin: 0 auto;
-	border: 3px solid #931420;
-	background-color: #fffded;
-	}
-	a:focus, a:hover {
-	font-style: italic;
-	}
-	/* the styles for the header */
-	header {
-	padding: 1.5em 0 2em 0;
-	border-bottom: 3px solid #931420;
-	background-image: -moz-linear-gradient(
-	30deg, #f6bb73 0%, #f6bb73 30%, white 50%, #f6bb73 80%, #f6bb73 100%);
-	background-image: -webkit-linear-gradient(
-	30deg, #f6bb73 0%, #f6bb73 30%, white 50%, #f6bb73 80%, #f6bb73 100%);
-	background-image: -o-linear-gradient(
-	30deg, #f6bb73 0%, #f6bb73 30%, white 50%, #f6bb73 80%, #f6bb73 100%);
-	background-image: linear-gradient(
-	30deg, #f6bb73 0%, #f6bb73 30%, white 50%, #f6bb73 80%, #f6bb73 100%);
-	}
-	header h2 {
-	font-size: 175%;
-	color: #800000;
-	}
-	header h3 {
-	font-size: 130%;
-	font-style: italic;
-	}
-	header img {
-	float: left;
-	padding: 0 30px;
-	}
-	.shadow {
-	text-shadow: 2px 2px 2px #800000;
-	}
-	/* the styles for the navigation menu */
-	#nav_menu ul {
+    font-size: 100%;
+	width: 98%; /* step 4 */
+	max-width: 960px; /* step 4*/
+    margin: 0 auto;
+    border: 3px solid #931420;
+    background-color: #fffded;
+}
+
+li:hover .sub-nav {
+	display: block
+}
+
+#nav_menu ul {
 	list-style-type: none;
 	margin: 0;
 	padding: 0;
 	position: relative;
-	}
-	#nav_menu ul li {
+}
+/* hide mobile menu */
+#mobile_menu {
+	display: none;
+}
+#nav_menu ul li{
 	float: left;
-	}
-	#nav_menu ul li a {
-	display: block;
-	width: 160px;
-	text-align: center;
-	padding: 1em 0;
-	text-decoration: none;
+	width: 20%;	/* 207px/570px (main) step 6 pg 289 */
 	background-color: #800000;
+}
+
+#nav_menu ul li a {	/* step 8 move style to ul li a */
+	display: block;
+	padding: 1em 0px;
+	text-align: center;
+	
 	color: white;
 	font-weight: bold;
+	text-decoration: none;
+}
+
+#nav_menu ul li a.current{
+	color: yellow
+}
+#nav_menu ul li:hover > ul {
+	display: block;
 	}
-	#nav_menu a.current {
-	color: yellow;
-	}
-	#nav_menu ul ul {
+#nav_menu > ul::after {
+	content: '';
+	display: block;
+	clear: both;
+}
+
+#nav_menu .sub-nav {
+	position: absolute !important;
+	top: 100%;
+	display: none;
+}
+
+#nav-menu .sub-nav li{
+	float: clear !important;
+}
+#nav_menu ul ul {
 	display: none;
 	position: absolute;
 	top: 100%;
+	width: 20%;
 	}
-	#nav_menu ul ul li {
+#nav_menu ul ul li { 
 	float: none;
-	}
-	#nav_menu ul li:hover > ul {
-	display: block;
-	}
-	#nav_menu > ul::after {
-	content: "";
-	clear: both;
-	display: block;
-	}
-	/* the styles for the main content */
-	main {
-	clear: left;
-	}
-	
-	/* the styles for the section */
-	section {
-	width: 525px;
+	width: 100%;	/* step 5 nav.sub-menu */
+}
+.circle-list {
+	list-style-type: circle;
+}
+
+a:focus, a:hover {
+	font-style: italic;
+}
+/* the styles for the header */
+header {
+	padding: 1.5em 0 2em 0;
+	border-bottom: 3px solid #931420;
+		background-image: -moz-linear-gradient(
+	    30deg, #f6bb73 0%, #f6bb73 30%, white 50%, #f6bb73 80%, #f6bb73 100%);
+	background-image: -webkit-linear-gradient(
+	    30deg, #f6bb73 0%, #fffded 30%, white 50%, #fffded 80%, #f6bb73 100%);
+	background-image: -o-linear-gradient(
+	    30deg, #f6bb73 0%, #fffded 30%, white 50%, #fffded 80%, #f6bb73 100%);
+	background-image: linear-gradient(
+	    30deg, #f6bb73 0%, #fffded 30%, white 50%, #fffded 80%, #f6bb73 100%);
+}
+header h2 {
+	font-size: 175%;
+	color: #800000;
+}
+header h3 {
+	font-size: 130%;
+	font-style: italic;
+}
+header img {
+	float: left;
+	padding: 0 3.125%; /* 30px/960px step 6 */
+}
+.shadow {
+	text-shadow: 2px 2px 2px #800000;
+}
+
+/* the styles for the section */
+section {
+	width: 65.625%;	/* step 6 pg 289 */
 	float: right;
-	padding: 0 20px 20px 20px;
-	}
-	section h1 {
+	padding-bottom: 20px;
+}
+section h1 {
 	font-size: 150%;
 	padding: .5em 0 .25em 0;
-	margin: 0;
-	}
-	section h2 {
+	margin: 0;               /* If you remove this, the margins in normalize.css will be applied. */
+}
+section h2 {
 	color: #800000;
 	font-size: 130%;
 	padding: .5em 0 .25em 0;
-	}
-	section p {
+}
+section p {
 	padding-bottom: .5em;
-	}
-	section blockquote {
+}
+section blockquote {
 	padding: 0 2em;
 	font-style: italic;
-	}
-	section ul {
+}
+section ul {
 	padding: 0 0 .25em 1.25em;
-	list-style-type: circle;
-	}
-	section li {
+}
+section li {
 	padding-bottom: .35em;
-	}
-	
-	/* the styles for the article */
-	article {
+}
+
+/* the styles for the article */
+article {
 	padding: .5em 0;
 	border-top: 2px solid #800000;
 	border-bottom: 2px solid #800000;
-	}
-	article h2 {
+}
+article h2 {
 	padding-top: 0;
-	}
-	article h3 {
+}
+article h3 {
 	font-size: 105%;
 	padding-bottom: .25em;
-	}
-	article img {
+}
+article img {
 	float: right;
 	margin: .5em 0 1em 1em;
 	border: 1px solid black;
-	}
-	
-	/* the styles for the aside */
-	aside {
-	width: 215px;
-	float: right;
-	padding: 0 0 20px 20px;
-	}
-	aside h2 {
+	max-width: 40%; /* step 13 */
+	min-width: 150px; /* step 13 */
+}
+
+/* the styles for the aside */
+aside {
+	width: 20%;	/* 215px/570px (main) step 6 pg 289 */
+	float: left;
+	padding: 0 3.571% 0 3.571%; /* 20px/960px step 6 */
+}
+aside h2 {
 	color: #800000;
 	font-size: 130%;
-	padding: .5em 0 .25em 0;
-	}
-	
-	aside h3 {
+	padding: .6em 0 .25em 0;
+}
+
+aside h3 {
 	font-size: 105%;
 	padding-bottom: .25em;
-	}
-	aside img {
+}
+aside img {
 	padding-bottom: 1em;
-	}
-	
-	/* the styles for the footer */
-	footer {
+}
+
+/* the styles for the footer */
+footer {
 	background-color: #931420;
 	clear: both;
-	
-	}
-	footer p {
+
+}
+footer p {
 	text-align: center;
 	color: white;
 	padding: 1em 0;
+}
+
+/*standard to tablet portrait 960 pg 313 */
+@media only screen and (max-width: 959px) {
+	#nav_menu ul li a { font-size: .875em; }	/* 14/16 */
+	article h1 { font-size: 135%; }	/* 24/16 */
+	aside h2 { font-size: 120%; }
+	aside { font-size: 120% }	/*  18/16 */
+}
+
+/*standard to phone landscape <= 767px pg 313 */
+@media only screen and (max-width: 767px) {
+	#nav_menu { 
+		display: none; 
 	}
+	#mobile_menu { 
+		display: block; 
+	} /*display mobile menu*/
+	#mobile_menu .slicknav_menu { 
+		background-color: #800000; 
+	}
+	body {
+		width: 100%;	/* full width of screen */
+		margin: 0;		/* no margins */
+		border: none;  /* no border */
+	}
+	header {
+		justify-content: center;
+	}
+	header, footer p { 
+		text-align: center; 
+	}
+	footer p { 
+		margin-right: 0;
+	}
+	header h2 {
+		font-size: 1.625em;	/* 26/16 */
+		margin: .4em 0 .25em 0;
+	}
+	header h3 {
+		font-size: 90%;	/* base font size */
+		margin-left: 0;
+	}
+	header img { 
+		float: none; 
+	}
+	article {
+		width: 95.9596%;	/* 100 - (2*2.0202) for padding */
+		float: none;
+		margin-right: 2.0202%;	/* 20/990*100 */
+		padding-right: 0;
+	}
+	article img {
+		float: left;
+		width: 30%;
+		margin-right: 2%;
+	}
+	section {
+		float: none;
+		width: 95.9596%;
+	}
+	aside {
+		width: 95.9596%; 	/* 100- (2*2.0202)  100% - l&r padding */
+		float: none;
+		margin: 0 2.0202% 2.0202% 2.0202%;	/* 20/990*100 */
+		padding-right: 2.0202%;
+		padding-left: 2.0202%;
+	}
+	aside #speakers {
+		column-count: 2;
+	}
+}
+	
+	/* mobile in portrait <= 479px pg 315 */
+@media only sreen and (max-width: 479px) {
+	#nav_menu { 
+		display: none 
+	} /* ?? pg 305 */
+	header h2 { 
+		font-size: 1.375em; 
+	}	/* 22/16 */
+	header h3 { 
+		font-size: .8125em; 
+	}	/* 13/16 */
+	p { 
+		font-size: .875em; 
+	}	/* 14/16 */
+	article h1, aside h2 {
+		font-size: 90%; 
+	}	/* base font size */
+		aside li { 
+			font-size: .875em; 
+		}	/*14/16 */
+	
+	article img {
+		float: none;
+		width: 100%;
+		margin-right: 0;
+	}
+	aside h3 { 
+		font-size: .9375em; 
+	}	/* 15/16 */
+	footer p { 
+		font-size: .6875em; 
+	}	/* 11/16 */
+}
+
+
+
+

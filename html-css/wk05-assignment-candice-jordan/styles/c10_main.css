@@ -81,9 +81,11 @@ header img {
 main {
 	grid-area: main;
 	display: grid;
-	grid-template-rows: auto;
-	grid-template-columns: 1fr 30%;
+	grid-template: auto / 1fr 30%;
 	grid-gap: 2.5%;
+	grid-template-areas: 
+	"section"
+	"aside";
 }
 
 /* the styles for the section */
